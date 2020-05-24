@@ -1,0 +1,61 @@
+We have char sequence option in selenium where we can pass the value in text box using three string classes :
+
+Those are :
+
+1.String > This we normally use.
+
+2.StringBuffer > this is another type of String class
+
+3.String Builder > This is another type of String class
+
+
+
+
+
+
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.Test;
+
+public class CharSequence {
+	
+	@Test
+	public void sequence() {
+		
+		System.setProperty("webdriver.chrome.driver","D:\\Softwares\\Selenium\\Drivers\\chromedriver.exe");
+		WebDriver driver = new ChromeDriver();
+		
+		driver.get("https://www.rediff.com/");
+		
+		WebElement email = driver.findElement(By.id("srchword"));
+		
+		String hi = "Hey";
+	
+		
+		StringBuffer sb = new StringBuffer()
+				.append("Hi")
+				.append("Bye")
+				.append("No");
+		
+		StringBuilder sbd = new StringBuilder()
+				.append("Yes")
+				.append("what")
+				.append("a")
+				.append("day");
+		
+		
+		email.sendKeys(sbd,sb,hi);
+		
+		
+	}
+
+}
+
+
+
+
+what ever available in the the text box will be entered into the edit box
